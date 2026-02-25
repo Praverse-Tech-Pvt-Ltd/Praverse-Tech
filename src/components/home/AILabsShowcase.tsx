@@ -6,7 +6,7 @@ import { AnimatedItem, AnimatedSection } from '@/components/common/AnimatedSecti
 import { Card, CardContent } from '../ui/card';
 import { Eye, Brain, Cpu, Orbit } from 'lucide-react';
 import Image from 'next/image';
-import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
+// Using a lightweight controlled tabs implementation for reliability
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { cn } from '@/lib/utils';
 
@@ -28,49 +28,67 @@ export function AILabsShowcase() {
                     </p>
                 </AnimatedItem>
 
-                <Tabs defaultValue="vision" className="w-full">
-                    <TabsList className="grid h-auto w-full grid-cols-2 md:grid-cols-4 gap-2">
-                        {tabs.map(tab => (
-                            <TabsTrigger key={tab.id} value={tab.id} className="py-3 gap-2 data-[state=active]:bg-primary/10 data-[state=active]:text-primary focus-ring">
-                                <tab.icon className="w-5 h-5"/>
-                                <span className="hidden sm:inline">{tab.label}</span>
-                            </TabsTrigger>
-                        ))}
-                    </TabsList>
-                    <AnimatePresence mode="wait">
-                        {tabs.map(tab => {
-                            const image = PlaceHolderImages.find(p => p.id === tab.imageId);
-                            return (
-                                <TabsContent key={tab.id} value={tab.id} className="mt-8">
-                                    <AnimatedItem direction="up">
-                                        <Card className="overflow-hidden border-border/60 shadow-lg">
-                                            <CardContent className="p-8">
-                                                <div className="text-center mb-6">
-                                                    <h3 className="text-xl font-semibold md:text-2xl">{tab.title}</h3>
-                                                    <p className="mt-2 text-sm text-muted-foreground md:text-base">{tab.description}</p>
-                                                </div>
-                                                <div className="relative mx-auto aspect-video w-full max-w-3xl overflow-hidden rounded-lg border border-border/70 bg-background/60 shadow-inner">
-                                                    {image && (
-                                                      <Image
-                                                        src={image.imageUrl}
-                                                        alt={tab.title}
-                                                        fill
-                                                        sizes="(min-width: 1280px) 40vw, (min-width: 768px) 60vw, 100vw"
-                                                        className="object-cover"
-                                                        data-ai-hint={image.imageHint}
-                                                      />
-                                                    )}
-                                                    <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 via-transparent to-secondary/20 mix-blend-overlay pointer-events-none" />
-                                                </div>
-                                            </CardContent>
-                                        </Card>
-                                    </AnimatedItem>
-                                </TabsContent>
-                            );
-                        })}
-                    </AnimatePresence>
-                </Tabs>
+                <Controller />
             </div>
         </AnimatedSection>
+    );
+}
+
+function Controller() {
+    const [active, setActive] = useState<string>('vision');
+
+    return (
+        <div className="w-full">
+            <div className="grid h-auto w-full grid-cols-2 md:grid-cols-4 gap-2">
+                {tabs.map(tab => (
+                    <button
+                        key={tab.id}
+                        onClick={() => setActive(tab.id)}
+                        className={cn(
+                            'inline-flex items-center justify-center py-3 gap-2 rounded-sm px-3 text-sm font-medium focus-ring transition-colors',
+                            active === tab.id ? 'bg-primary/10 text-primary shadow-sm' : 'bg-muted text-muted-foreground'
+                        )}
+                        aria-pressed={active === tab.id}
+                    >
+                        <tab.icon className="w-5 h-5" />
+                        <span className="hidden sm:inline">{tab.label}</span>
+                    </button>
+                ))}
+            </div>
+
+            {(() => {
+                // simple render of active tab (avoid animation issues)
+                const tab = tabs.find(t => t.id === active) || tabs[0];
+                const image = PlaceHolderImages.find(p => p.id === tab.imageId);
+
+                return (
+                    <div className="mt-8">
+                        <Card className="overflow-hidden border-border/60 shadow-lg">
+                            <CardContent className="p-8">
+                                <div className="text-center mb-6">
+                                    <h3 className="text-xl font-semibold md:text-2xl">{tab.title}</h3>
+                                    <p className="mt-2 text-sm text-muted-foreground md:text-base">{tab.description}</p>
+                                </div>
+                                <div className="relative mx-auto aspect-video w-full max-w-3xl overflow-hidden rounded-lg border border-border/70 bg-background/60 shadow-inner">
+                                    {image ? (
+                                      <Image
+                                        src={image.imageUrl}
+                                        alt={tab.title}
+                                        fill
+                                        sizes="(min-width: 1280px) 40vw, (min-width: 768px) 60vw, 100vw"
+                                        className="object-cover"
+                                        data-ai-hint={image.imageHint}
+                                      />
+                                    ) : (
+                                      <div className="flex items-center justify-center w-full h-full text-muted-foreground">No preview available</div>
+                                    )}
+                                    <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 via-transparent to-secondary/20 mix-blend-overlay pointer-events-none" />
+                                </div>
+                            </CardContent>
+                        </Card>
+                    </div>
+                );
+            })()}
+        </div>
     );
 }

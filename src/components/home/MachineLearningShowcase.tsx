@@ -65,8 +65,7 @@ export function MachineLearningShowcase() {
                                 <span className="text-sm font-medium text-muted-foreground transition-colors duration-300 group-hover:text-foreground">{step.name}</span>
                            </AnimatedItem>
                         ))}
-                        <div className="absolute left-0 top-10 -z-10 h-1 w-full bg-border" />
-                        <div className="absolute left-0 top-10 -z-10 h-1 w-full bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-700 delay-300 origin-left" />
+                        {/* center line removed as requested */}
                     </div>
                     <div className="mt-6 flex flex-wrap justify-center gap-2">
                         <span className="rounded-full bg-muted px-3 py-1 text-xs font-medium text-muted-foreground">Vision</span>
