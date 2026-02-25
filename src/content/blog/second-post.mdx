@@ -1,0 +1,40 @@
+
+---
+title: 'HealthMate: Reimagining Patient Triage with Multimodal AI'
+date: '2024-06-10'
+author: 'Rajesh Kumar'
+excerpt: 'Patient intake is often the biggest bottleneck in healthcare. See how our AI-powered HealthMate kiosk is changing the game.'
+image: 'blog-post-2'
+tags: ['HealthTech', 'AI', 'Triage', 'EHR']
+---
+
+import {MdxComponents} from '@/components/blog/MdxComponents';
+
+## The Emergency Room Bottleneck
+
+Anyone who has visited a hospital knows the frustration of waiting. The initial triage process is critical but often slow and manual. This is where HealthMate comes in.
+
+### More Than Just a Check-in
+
+HealthMate is not a simple check-in screen. It's a sophisticated diagnostic assistant.
+
+1.  **Vitals Capture:** Integrated sensors capture temperature, blood pressure, and SpO2.
+2.  **Symptom Understanding:** Patients can speak or type their symptoms in natural language. Our NLP model understands context and asks clarifying questions.
+3.  **EHR Integration:** The collected data is structured and pushed directly into your existing Electronic Health Record system.
+
+### A Real-World Example
+
+```javascript
+const patientData = {
+  vitals: {
+    temp: '38.5C',
+    bp: '140/90',
+    spo2: '96%',
+  },
+  symptoms: 'I have a bad cough and my chest hurts when I breathe.',
+  triageScore: 8, // AI-generated urgency score
+  recommendedAction: 'Immediate review by nurse practitioner.'
+};
+```
+
+This structured output allows clinical staff to prioritize patients effectively, leading to better outcomes and a more efficient workflow.

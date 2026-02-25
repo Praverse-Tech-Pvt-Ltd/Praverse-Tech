@@ -1,0 +1,48 @@
+
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Helper function to check if the user is an authenticated admin.
+    // In a real app, this would check a custom claim or a document in a 'roles' collection.
+    function isAdmin() {
+      return request.auth != null; // Placeholder: Allow any authenticated user as admin for now
+    }
+
+    // HealthMate Waitlist: Client can only create. No read, update, or delete.
+    match /hm_waitlist/{docId} {
+      allow read, update, delete: if false;
+      allow create: if request.auth != null; // Simplification, would be rate-limited in functions
+    }
+
+    // HealthMate Briefings: Client can only create.
+    match /hm_briefings/{docId} {
+      allow read, update, delete: if false;
+      allow create: if request.auth != null;
+    }
+
+    // HealthMate Media Requests: Client can only create.
+    match /hm_media_requests/{docId} {
+      allow read, update, delete: if false;
+      allow create: if request.auth != null;
+    }
+    
+    // HealthMate Timeline: Publicly readable, admin writeable.
+    match /hm_timeline/{docId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    // HealthMate FAQ: Publicly readable, admin writeable.
+    match /hm_faq/{docId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+    
+    // HealthMate Press Note: Publicly readable, admin writeable.
+    match /hm_press_note/{docId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+  }
+}

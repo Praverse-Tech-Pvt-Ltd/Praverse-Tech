@@ -1,0 +1,117 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Deep Space Dark Theme - Professional & Modern */
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+    --card: 222 47% 14%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 173 80% 40%;
+    --primary-foreground: 222 47% 11%;
+    --secondary: 217 91% 60%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 222 47% 18%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 217 91% 60%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 215 28% 25%;
+    --input: 215 28% 25%;
+    --ring: 173 80% 40%;
+    --chart-1: 173 80% 40%;
+    --chart-2: 217 91% 60%;
+    --chart-3: 142 71% 45%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    --radius: 0.5rem;
+    --sidebar-background: 222 47% 11%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 210 40% 98%;
+    --sidebar-primary-foreground: 222 47% 11%;
+    --sidebar-accent: 222 47% 18%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 215 28% 25%;
+    --sidebar-ring: 173 80% 40%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: 'kern' 1, 'liga' 1;
+  }
+  h1,h2,h3,h4,h5,h6 {
+    @apply font-headline;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+  }
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold;
+  }
+  h2 {
+    @apply text-3xl md:text-4xl font-bold;
+  }
+  h3 {
+    @apply text-2xl md:text-3xl font-semibold;
+  }
+  h4 {
+    @apply text-xl md:text-2xl font-semibold;
+  }
+  p {
+    @apply leading-relaxed;
+    max-width: 75ch;
+  }
+  p,div,span,a,li,button {
+    @apply font-body;
+  }
+  h1{
+    @apply text-5xl font-bold tracking-tighter;
+  }
+  h2{
+    @apply text-4xl font-bold tracking-tighter;
+  }
+  h3{
+    @apply text-2xl font-bold tracking-tighter;
+  }
+
+  section {
+    @apply py-20 md:py-28;
+  }
+}
+
+@layer utilities {
+  .glassmorphism {
+    @apply bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-60;
+  }
+  .bg-gradient-radial-hero {
+    background-image: radial-gradient(ellipse 50% 50% at 50% 50%, hsl(var(--primary) / 0.15), transparent);
+  }
+  .section-padding {
+    @apply py-16 md:py-24 lg:py-32;
+  }
+  .section-padding-sm {
+    @apply py-12 md:py-16 lg:py-20;
+  }
+  .content-max-width {
+    @apply max-w-4xl mx-auto;
+  }
+  .prose-heading {
+    @apply tracking-tight leading-tight;
+  }
+  .card-hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-xl;
+  }
+  .focus-ring {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2;
+  }
+}

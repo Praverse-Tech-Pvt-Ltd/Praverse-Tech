@@ -1,0 +1,34 @@
+
+{
+  "hosting": {
+    "source": ".",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "frameworksBackend": {
+      "region": "us-central1"
+    },
+    "headers": [
+      {
+        "source": "/healthmate",
+        "headers": [
+          {
+            "key": "X-Robots-Tag",
+            "value": "noindex, nofollow, noimageai"
+          }
+        ]
+      },
+      {
+        "source": "/healthmate/**",
+        "headers": [
+          {
+            "key": "X-Robots-Tag",
+            "value": "noindex, nofollow, noimageai"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,247 @@
+
+{
+  "entities": {
+    "HmWaitlist": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "HmWaitlist",
+      "type": "object",
+      "description": "Represents a user who has joined the HealthMate waitlist.",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Name of the person joining the waitlist."
+        },
+        "email": {
+          "type": "string",
+          "description": "Email address of the person joining the waitlist.",
+          "format": "email"
+        },
+        "org": {
+          "type": "string",
+          "description": "Organization the person belongs to."
+        },
+        "role": {
+          "type": "string",
+          "description": "Role of the person in their organization."
+        },
+        "useCase": {
+          "type": "string",
+          "description": "Intended use case for HealthMate."
+        },
+        "consent": {
+          "type": "boolean",
+          "description": "Consent given by the person to join the waitlist."
+        },
+        "ts": {
+          "type": "string",
+          "description": "Timestamp of when the person joined the waitlist.",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "name",
+        "email",
+        "org",
+        "role",
+        "useCase",
+        "consent",
+        "ts"
+      ]
+    },
+    "HmBriefing": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "HmBriefing",
+      "type": "object",
+      "description": "Represents a request for an NDA briefing on HealthMate.",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Name of the person requesting the briefing."
+        },
+        "email": {
+          "type": "string",
+          "description": "Email address of the person requesting the briefing.",
+          "format": "email"
+        },
+        "org": {
+          "type": "string",
+          "description": "Organization of the person requesting the briefing."
+        },
+        "website": {
+          "type": "string",
+          "description": "Website of the organization requesting the briefing.",
+          "format": "uri"
+        },
+        "purpose": {
+          "type": "string",
+          "description": "Purpose of the briefing request."
+        },
+        "region": {
+          "type": "string",
+          "description": "Region of the person/organization requesting the briefing."
+        },
+        "consent": {
+          "type": "boolean",
+          "description": "Consent given by the person for the briefing request."
+        },
+        "ts": {
+          "type": "string",
+          "description": "Timestamp of when the briefing was requested.",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "name",
+        "email",
+        "org",
+        "website",
+        "purpose",
+        "region",
+        "consent",
+        "ts"
+      ]
+    },
+    "HmMediaRequest": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "HmMediaRequest",
+      "type": "object",
+      "description": "Represents a request for a media kit for HealthMate.",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Name of the person requesting the media kit."
+        },
+        "email": {
+          "type": "string",
+          "description": "Email address of the person requesting the media kit.",
+          "format": "email"
+        },
+        "publication": {
+          "type": "string",
+          "description": "Name of the publication requesting the media kit."
+        },
+        "link": {
+          "type": "string",
+          "description": "Link to the publication."
+        },
+        "embargoAck": {
+          "type": "boolean",
+          "description": "Acknowledgement of the press embargo."
+        },
+        "ts": {
+          "type": "string",
+          "description": "Timestamp of when the media kit was requested.",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "name",
+        "email",
+        "publication",
+        "link",
+        "embargoAck",
+        "ts"
+      ]
+    },
+    "HmTimeline": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "HmTimeline",
+      "type": "object",
+      "description": "Represents a milestone in the HealthMate timeline.",
+      "properties": {
+        "date": {
+          "type": "string",
+          "description": "Date or timeframe of the milestone."
+        },
+        "description": {
+          "type": "string",
+          "description": "Description of the milestone."
+        }
+      },
+      "required": [
+        "date",
+        "description"
+      ]
+    },
+    "HmFaq": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "HmFaq",
+      "type": "object",
+      "description": "Represents a frequently asked question about HealthMate.",
+      "properties": {
+        "question": {
+          "type": "string",
+          "description": "The question being asked."
+        },
+        "answer": {
+          "type": "string",
+          "description": "The answer to the question."
+        }
+      },
+      "required": [
+        "question",
+        "answer"
+      ]
+    },
+    "HmPressNote": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "HmPressNote",
+      "type": "object",
+      "description": "Represents a press note about HealthMate.",
+      "properties": {
+        "content": {
+          "type": "string",
+          "description": "The content of the press note."
+        }
+      },
+      "required": [
+        "content"
+      ]
+    }
+  },
+  "auth": {
+    "providers": [
+      "password",
+      "anonymous",
+      "emailLink"
+    ]
+  },
+  "firestore": {
+    "hm_waitlist/{waitlistId}": {
+      "schema": {
+        "$ref": "#/entities/HmWaitlist"
+      },
+      "description": "Stores entries for users who have joined the HealthMate waitlist."
+    },
+    "hm_briefings/{briefingId}": {
+      "schema": {
+        "$ref": "#/entities/HmBriefing"
+      },
+      "description": "Stores requests for NDA briefings on HealthMate."
+    },
+    "hm_media_requests/{mediaRequestId}": {
+      "schema": {
+        "$ref": "#/entities/HmMediaRequest"
+      },
+      "description": "Stores requests for media kits for HealthMate."
+    },
+    "hm_timeline/{timelineId}": {
+      "schema": {
+        "$ref": "#/entities/HmTimeline"
+      },
+      "description": "Stores timeline milestones for HealthMate. Can be managed by an admin."
+    },
+    "hm_faq/{faqId}": {
+      "schema": {
+        "$ref": "#/entities/HmFaq"
+      },
+      "description": "Stores frequently asked questions about HealthMate. Can be managed by an admin."
+    },
+    "hm_press_note/{pressNoteId}": {
+      "schema": {
+        "$ref": "#/entities/HmPressNote"
+      },
+      "description": "Stores press notes about HealthMate. Can be managed by an admin."
+    }
+  }
+}

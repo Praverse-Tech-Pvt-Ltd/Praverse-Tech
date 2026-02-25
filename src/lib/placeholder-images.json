@@ -1,0 +1,172 @@
+{
+  "placeholderImages": [
+    {
+      "id": "hero-abstract",
+      "description": "Abstract swirling blue and teal shapes representing AI",
+      "imageUrl": "https://images.unsplash.com/photo-1711831521065-e546a5aca68e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxhYnN0cmFjdCUyMGFpfGVufDB8fHx8MTc2Mjk2MjQzNHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "abstract ai"
+    },
+    {
+      "id": "pharma-demo",
+      "description": "A placeholder image for a pharma compliance software demo",
+      "imageUrl": "https://images.unsplash.com/photo-1575388902449-6bca946ad549?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxzb2Z0d2FyZSUyMGRhc2hib2FyZHxlbnwwfHx8fDE3NjI4NjEyMjN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "software dashboard"
+    },
+    {
+      "id": "healthmate-demo",
+      "description": "A placeholder image for a healthcare kiosk interface",
+      "imageUrl": "https://images.unsplash.com/photo-1642364706738-1334b13c66a2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxraW9zayUyMGludGVyZmFjZXxlbnwwfHx8fDE3NjI5NjI0MzR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "kiosk interface"
+    },
+    {
+      "id": "avatar-1",
+      "description": "Professional headshot of a woman",
+      "imageUrl": "https://images.unsplash.com/photo-1614283233556-f35b0c801ef1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHx3b21hbiUyMHBvcnRyYWl0fGVufDB8fHx8MTc2Mjg4ODYyM3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "woman portrait"
+    },
+    {
+      "id": "avatar-2",
+      "description": "Professional headshot of Pratham Shrivastav",
+      "imageUrl": "https://storage.googleapis.com/alt-cloud-dev-image-bucket/user_images/34e8a154-b4a1-4389-980b-6f8a846c986e.jpeg",
+      "imageHint": "man portrait"
+    },
+    {
+      "id": "avatar-3",
+      "description": "Professional headshot of a woman",
+      "imageUrl": "https://images.unsplash.com/photo-1692869439847-80c355a2b7f2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHx3b21hbiUyMHBvcnRyYWl0JTIwcHJvZmVzc2lvbmFsfGVufDB8fHx8MTc2Mjk2MjQzNHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "woman portrait professional"
+    },
+    {
+      "id": "about-mission",
+      "description": "An abstract image representing vision and mission",
+      "imageUrl": "https://images.unsplash.com/photo-1620712943543-285f7266c8da?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxhcnRpZmljaWFsJTIwaW50ZWxsaWdlbmNlfGVufDB8fHx8MTc2MzAzMzg2MXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "artificial intelligence"
+    },
+    {
+      "id": "pharma-hero",
+      "description": "Image of a modern pharmaceutical laboratory",
+      "imageUrl": "https://images.unsplash.com/photo-1639772823849-6efbd173043c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxwaGFybWFjZXV0aWNhbCUyMGxhYm9yYXRvcnl8ZW58MHx8fHwxNzYyOTUzNDE5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "pharmaceutical laboratory"
+    },
+    {
+      "id": "contact-hero",
+      "description": "Image of office building in India",
+      "imageUrl": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxvZmZpY2UlMjBidWlsZGluZ3xlbnwwfHx8fDE3NjI5NjI0MzR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "office building"
+    },
+    {
+      "id": "blog-post-1",
+      "description": "Abstract AI neurons",
+      "imageUrl": "https://images.unsplash.com/photo-1678214239868-9371ba839628?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxhaSUyMG5ldXJvbnN8ZW58MHx8fHwxNzYyOTYyNDM0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "ai neurons"
+    },
+    {
+      "id": "blog-post-2",
+      "description": "Doctor using a tablet",
+      "imageUrl": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxkb2N0b3IlMjB0YWJsZXR8ZW58MHx8fHwxNzYyOTYyMTA0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "doctor tablet"
+    },
+    {
+      "id": "leadership-1",
+      "description": "Portrait of a CEO",
+      "imageUrl": "https://images.unsplash.com/photo-1546572797-e8c933a75a1f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8bWFuJTIwY2VvfGVufDB8fHx8MTc2Mjk2MjQzNHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "man ceo"
+    },
+    {
+      "id": "leadership-2",
+      "description": "Portrait of a CTO",
+      "imageUrl": "https://picsum.photos/seed/113/400/400",
+      "imageHint": "woman cto"
+    },
+    {
+      "id": "humanoid-hero",
+      "description": "A futuristic humanoid robot looking at a screen with data",
+      "imageUrl": "https://images.unsplash.com/photo-1666597107756-ef489e9f1f09?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxodW1hbm9pZCUyMHJvYm90fGVufDB8fHx8MTc2Mjg4MDAzOHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "humanoid robot"
+    },
+    {
+      "id": "humanoid-assist",
+      "description": "A humanoid robot assisting a person in a lab",
+      "imageUrl": "https://images.unsplash.com/photo-1641973841580-7834af051f6c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxyb2JvdCUyMGFzc2lzdGFuY2V8ZW58MHx8fHwxNzYyOTY2OTc3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "robot assistance"
+    },
+    {
+      "id": "humanoid-virtual",
+      "description": "A virtual reality interface showing the internals of a humanoid robot",
+      "imageUrl": "https://images.unsplash.com/photo-1630397512069-0377e0044f46?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHx2aXJ0dWFsJTIwcm9ib3RpY3N8ZW58MHx8fHwxNzYyOTY2OTc3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "virtual robotics"
+    },
+    {
+      "id": "healthmate-hero",
+      "description": "A dark, premium hero with a silhouetted humanoid outline and a soft glow.",
+      "imageUrl": "https://images.unsplash.com/photo-1728218948405-d749e7d1851e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8aHVtYW5vaWQlMjBzaWxob3VldHRlfGVufDB8fHx8MTc2Mjk2ODE3NXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "humanoid silhouette"
+    },
+    {
+      "id": "project-healthmate",
+      "imageUrl": "https://images.unsplash.com/photo-1560724797-bf78e981d20d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxyb2JvdCUyMGhlYWx0aGNhcmV8ZW58MHx8fHwxNzYyOTcyMDE4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "description": "Healthmate Project",
+      "imageHint": "robot healthcare"
+    },
+    {
+      "id": "project-fda",
+      "imageUrl": "https://images.unsplash.com/photo-1579196421658-a33fd14663f9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxjb21wbGlhbmNlJTIwZGFzaGJvYXJkfGVufDB8fHx8MTc2Mjk3MjAxOHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "description": "FDA Project",
+      "imageHint": "compliance dashboard"
+    },
+    {
+      "id": "project-robotics",
+      "imageUrl": "https://images.unsplash.com/photo-1651530065437-9d961dc5e8d9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8cm9ib3QlMjBzaW11bGF0aW9ufGVufDB8fHx8MTc2Mjk3MjAxOHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "description": "Robotics Project",
+      "imageHint": "robot simulation"
+    },
+    {
+      "id": "project-federated",
+      "imageUrl": "https://images.unsplash.com/photo-1758577515333-e71b713059f1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHx3ZWFyYWJsZSUyMGRhdGF8ZW58MHx8fHwxNzYyOTcyMDE4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "description": "Federated Learning Project",
+      "imageHint": "wearable data"
+    },
+    {
+      "id": "project-ehr",
+      "imageUrl": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtZWRpY2FsJTIwcmVjb3JkfGVufDB8fHx8MTc2Mjk3MjAxOHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "description": "EHR Project",
+      "imageHint": "medical record"
+    },
+    {
+      "id": "home-hero-bg",
+      "imageUrl": "https://images.unsplash.com/photo-1536240478700-b869070f9279?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "description": "Abstract background image for the hero section",
+      "imageHint": "abstract circuits"
+    },
+    {
+      "id": "home-vision-bg",
+      "imageUrl": "https://images.unsplash.com/photo-1554034483-74b0232501a5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "description": "Abstract background image for the vision section",
+      "imageHint": "abstract gradient"
+    },
+    {
+      "id": "careers-hero",
+      "imageUrl": "https://images.unsplash.com/photo-1521737711867-e3b97375f902?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxjb2xsYWJvcmF0aXZlJTIwdGVhbXxlbnwwfHx8fDE3NjMwMzUwMTd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "description": "A collaborative team working in a modern office",
+      "imageHint": "collaborative team"
+    },
+    {
+      "id": "lab-vision-ai",
+      "imageUrl": "https://images.unsplash.com/photo-1579154942207-e435a5895dc5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxtZWRpY2FsJTIwaW1hZ2luZ3xlbnwwfHx8fDE3NjMwMzYxNTV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "description": "Medical imaging analysis of a brain scan",
+      "imageHint": "medical imaging"
+    },
+    {
+      "id": "lab-edge-ai",
+      "imageUrl": "https://images.unsplash.com/photo-1696253914445-c26a8460459a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxlZGdlJTIwYWl8ZW58MHx8fHwxNzYzMDM1NTUxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "description": "An edge AI device processing data",
+      "imageHint": "edge ai"
+    },
+    {
+      "id": "lab-simulation",
+      "imageUrl": "https://images.unsplash.com/photo-1675663758368-76a08d23c34c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxyb2JvdCUyMHNpbXVsYXRpb258ZW58MHx8fHwxNzYzMDM1NjM3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "description": "A simulation of a robot arm in a virtual environment",
+      "imageHint": "robot simulation"
+    }
+  ]
+}
