@@ -43,6 +43,13 @@ export const DOMAINS = [
         href: null,
         icon: Atom,
         color: 'text-blue-400',
+    },
+    {
+        title: 'Photonics 2027',
+        description: 'Exploring integrated photonic sensors and optical computing for next-gen sensing. Early-stage, confidential research.',
+        href: null,
+        icon: Orbit,
+        color: 'text-indigo-400',
     }
 ];
 
