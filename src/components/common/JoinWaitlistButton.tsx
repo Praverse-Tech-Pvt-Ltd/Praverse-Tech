@@ -12,7 +12,7 @@ export default function JoinWaitlistButton({ onClick, children, className }: Pro
   return (
     <button
       onClick={onClick}
-      className={`join-btn relative overflow-hidden rounded-full px-5 py-2.5 bg-[#006BB3] text-white font-bold flex items-center gap-2 border-2 border-white/30 shadow-[0_10px_20px_rgba(0,0,0,0.2)] transition-transform duration-300 ${className ?? ''}`}
+      className={`join-btn relative overflow-hidden rounded-full px-5 py-2.5 bg-primary text-primary-foreground font-bold flex items-center gap-2 border-2 border-white/30 shadow-[0_10px_20px_rgba(0,0,0,0.2)] transition-transform duration-300 ${className ?? ''}`}
       aria-label="Join Waitlist"
     >
       {children ?? 'Apply Now'}
