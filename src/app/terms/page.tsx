@@ -16,39 +16,34 @@ export default function TermsPage() {
   }, []);
 
   return (
-    <AnimatedSection className="container prose mx-auto max-w-4xl py-16 dark:prose-invert">
-      <h1>Terms of Service</h1>
-      <p>Last updated: {currentDate}</p>
+    <AnimatedSection className="section-padding bg-background">
+      <div className="container mx-auto max-w-5xl">
+        <header className="mb-8 rounded-lg p-8 bg-card/40 backdrop-blur-sm">
+          <h1 className="text-3xl font-headline mb-2">Terms of Service</h1>
+          <p className="text-sm text-muted-foreground">Last updated: {currentDate}</p>
+          <p className="mt-4 text-base text-muted-foreground max-w-2xl">These Terms govern your use of Praverse Tech websites and services. Read carefully — by using our services you agree to these terms.</p>
+        </header>
 
-      <h2>1. Agreement to Terms</h2>
-      <p>
-        By using our Site, you agree to be bound by these Terms of Service. If you do not agree to these Terms, do not use the Site.
-      </p>
+        <main className="prose dark:prose-invert bg-card/0 p-6 rounded-lg">
+          <h2 id="agreement">1. Agreement to Terms</h2>
+          <p>By using our Site, you agree to be bound by these Terms of Service. If you do not agree to these Terms, do not use the Site.</p>
 
-      <h2>2. Intellectual Property Rights</h2>
-      <p>
-        The Site and its original content, features, and functionality are owned by Praverse Tech Pvt Ltd and are protected by international copyright, trademark, patent, trade secret, and other intellectual property or proprietary rights laws.
-      </p>
+          <h2 id="ip">2. Intellectual Property Rights</h2>
+          <p>The Site and its original content, features, and functionality are owned by Praverse Tech Pvt Ltd and are protected by applicable intellectual property laws.</p>
 
-      <h2>3. User Representations</h2>
-      <p>
-        By using the Site, you represent and warrant that: (1) all registration information you submit will be true, accurate, current, and complete; (2) you will maintain the accuracy of such information and promptly update such registration information as necessary; (3) you have the legal capacity and you agree to comply with these Terms of Service.
-      </p>
+          <h2 id="user">3. User Representations</h2>
+          <p>By using the Site, you represent and warrant that your registration information is accurate and you will comply with these Terms.</p>
 
-      <h2>4. Prohibited Activities</h2>
-      <p>
-        You may not access or use the Site for any purpose other than that for which we make the Site available. The Site may not be used in connection with any commercial endeavors except those that are specifically endorsed or approved by us.
-      </p>
+          <h2 id="prohibited">4. Prohibited Activities</h2>
+          <p>You may not use the Site for unauthorized commercial activities or any activity that violates applicable law.</p>
 
-      <h2>5. Governing Law</h2>
-      <p>
-        These Terms shall be governed and construed in accordance with the laws of India, without regard to its conflict of law provisions.
-      </p>
+          <h2 id="law">5. Governing Law</h2>
+          <p>These Terms shall be governed and construed in accordance with the laws of India.</p>
 
-      <h2>6. Contact Us</h2>
-      <p>
-        To resolve a complaint regarding the Site or to receive further information regarding use of the Site, please contact us at: contact@praverse.ai
-      </p>
+          <h2 id="contact">6. Contact Us</h2>
+          <p>To resolve a complaint or request more information, contact: <a href="mailto:contact@praverse.ai">contact@praverse.ai</a></p>
+        </main>
+      </div>
     </AnimatedSection>
   );
 }

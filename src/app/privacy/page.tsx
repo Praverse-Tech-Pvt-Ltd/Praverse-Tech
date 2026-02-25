@@ -16,48 +16,37 @@ export default function PrivacyPage() {
   }, []);
 
   return (
-    <AnimatedSection className="container prose mx-auto max-w-4xl py-16 dark:prose-invert">
-      <h1>Privacy Policy for Praverse Tech Pvt Ltd</h1>
-      <p>Last updated: {currentDate}</p>
+    <AnimatedSection className="section-padding bg-background">
+      <div className="container mx-auto max-w-5xl">
+        <header className="mb-8 rounded-lg p-8 bg-card/40 backdrop-blur-sm">
+          <h1 className="text-3xl font-headline mb-2">Privacy Policy</h1>
+          <p className="text-sm text-muted-foreground">Last updated: {currentDate}</p>
+          <p className="mt-4 text-base text-muted-foreground max-w-2xl">We value your privacy. This policy explains what data we collect and how we use it.</p>
+        </header>
 
-      <h2>Introduction</h2>
-      <p>
-        Praverse Tech Pvt Ltd ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website praverse.ai, including any other media form, media channel, mobile website, or mobile application related or connected thereto (collectively, the "Site").
-      </p>
+        <main className="prose dark:prose-invert bg-card/0 p-6 rounded-lg">
+          <h2 id="intro">Introduction</h2>
+          <p>Praverse Tech Pvt Ltd ("we," "our," or "us") is committed to protecting your privacy and explaining how we collect and use your information.</p>
 
-      <h2>Information We Collect</h2>
-      <p>
-        We may collect information about you in a variety of ways. The information we may collect on the Site includes:
-      </p>
-      <ul>
-        <li><strong>Personal Data:</strong> Personally identifiable information, such as your name, email address, and company name, that you voluntarily give to us when you fill out a contact form or subscribe to our newsletter.</li>
-        <li><strong>Derivative Data:</strong> Information our servers automatically collect when you access the Site, such as your IP address, your browser type, your operating system, your access times, and the pages you have viewed directly before and after accessing the Site.</li>
-      </ul>
+          <h2 id="collect">Information We Collect</h2>
+          <ul>
+            <li><strong>Personal Data:</strong> Information you provide, such as name and email.</li>
+            <li><strong>Derivative Data:</strong> Usage data collected automatically (IP, browser, pages visited).</li>
+          </ul>
 
-      <h2>Use of Your Information</h2>
-      <p>
-        Having accurate information about you permits us to provide you with a smooth, efficient, and customized experience. Specifically, we may use information collected about you via the Site to:
-      </p>
-      <ul>
-        <li>Respond to your inquiries and support requests.</li>
-        <li>Send you a newsletter or other marketing communications.</li>
-        <li>Monitor and analyze usage and trends to improve your experience with the Site.</li>
-      </ul>
+          <h2 id="use">Use of Your Information</h2>
+          <p>We use information to respond to inquiries, send updates, and improve our services.</p>
 
-      <h2>Disclosure of Your Information</h2>
-      <p>
-        We do not share, sell, rent or trade your information with third parties for their commercial purposes.
-      </p>
+          <h2 id="disclosure">Disclosure of Your Information</h2>
+          <p>We do not sell or trade your information to third parties for their commercial purposes.</p>
 
-      <h2>Security of Your Information</h2>
-      <p>
-        We use administrative, technical, and physical security measures to help protect your personal information. While we have taken reasonable steps to secure the personal information you provide to us, please be aware that despite our efforts, no security measures are perfect or impenetrable, and no method of data transmission can be guaranteed against any interception or other type of misuse.
-      </p>
+          <h2 id="security">Security of Your Information</h2>
+          <p>We implement measures to protect your data, but no system is completely secure.</p>
 
-      <h2>Contact Us</h2>
-      <p>
-        If you have questions or comments about this Privacy Policy, please contact us at: contact@praverse.ai
-      </p>
+          <h2 id="contact">Contact Us</h2>
+          <p>Questions? Contact <a href="mailto:contact@praverse.ai">contact@praverse.ai</a></p>
+        </main>
+      </div>
     </AnimatedSection>
   );
 }

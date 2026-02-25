@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
+import JoinWaitlistButton from './JoinWaitlistButton';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { ChevronDown, Menu } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -96,9 +97,9 @@ export function Header() {
         </nav>
         <div className="flex flex-1 items-center justify-end space-x-2">
           <WaitlistDialog open={isWaitlistOpen} onOpenChange={setIsWaitlistOpen}>
-            <Button asChild className="hidden sm:inline-flex focus-ring">
-              <button>Join Waitlist</button>
-            </Button>
+            <div className="hidden sm:inline-flex">
+              <JoinWaitlistButton onClick={() => setIsWaitlistOpen(true)}>Join Waitlist</JoinWaitlistButton>
+            </div>
           </WaitlistDialog>
           <div className="md:hidden">
             <Sheet>
