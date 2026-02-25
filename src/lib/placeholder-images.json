@@ -3,168 +3,168 @@
     {
       "id": "hero-abstract",
       "description": "Abstract swirling blue and teal shapes representing AI",
-      "imageUrl": "/placeholders/hero-abstract.svg",
+      "imageUrl": "/placeholders/hero-abstract.png",
       "imageHint": "abstract ai"
     },
     {
       "id": "pharma-demo",
       "description": "A placeholder image for a pharma compliance software demo",
-      "imageUrl": "/placeholders/pharma-demo.svg",
+      "imageUrl": "/placeholders/pharma-demo.png",
       "imageHint": "software dashboard"
     },
     {
       "id": "healthmate-demo",
       "description": "A placeholder image for a healthcare kiosk interface",
-      "imageUrl": "/placeholders/healthmate-demo.svg",
+      "imageUrl": "/placeholders/healthmate-demo.png",
       "imageHint": "kiosk interface"
     },
     {
       "id": "avatar-1",
       "description": "Professional headshot of a woman",
-      "imageUrl": "/placeholders/avatar-1.svg",
+      "imageUrl": "/placeholders/avatar-1.png",
       "imageHint": "woman portrait"
     },
     {
       "id": "avatar-2",
       "description": "Professional headshot of Pratham Shrivastav",
-      "imageUrl": "/placeholders/avatar-2.svg",
+      "imageUrl": "/placeholders/avatar-2.png",
       "imageHint": "man portrait"
     },
     {
       "id": "avatar-3",
       "description": "Professional headshot of a woman",
-      "imageUrl": "/placeholders/avatar-3.svg",
+      "imageUrl": "/placeholders/avatar-3.png",
       "imageHint": "woman portrait professional"
     },
     {
       "id": "about-mission",
       "description": "An abstract image representing vision and mission",
-      "imageUrl": "/placeholders/about-mission.svg",
+      "imageUrl": "/placeholders/about-mission.png",
       "imageHint": "artificial intelligence"
     },
     {
       "id": "pharma-hero",
       "description": "Image of a modern pharmaceutical laboratory",
-      "imageUrl": "/placeholders/pharma-hero.svg",
+      "imageUrl": "/placeholders/pharma-hero.png",
       "imageHint": "pharmaceutical laboratory"
     },
     {
       "id": "contact-hero",
       "description": "Image of office building in India",
-      "imageUrl": "/placeholders/contact-hero.svg",
+      "imageUrl": "/placeholders/contact-hero.png",
       "imageHint": "office building"
     },
     {
       "id": "blog-post-1",
       "description": "Abstract AI neurons",
-      "imageUrl": "/placeholders/blog-post-1.svg",
+      "imageUrl": "/placeholders/blog-post-1.png",
       "imageHint": "ai neurons"
     },
     {
       "id": "blog-post-2",
       "description": "Doctor using a tablet",
-      "imageUrl": "/placeholders/blog-post-2.svg",
+      "imageUrl": "/placeholders/blog-post-2.png",
       "imageHint": "doctor tablet"
     },
     {
       "id": "leadership-1",
       "description": "Portrait of a CEO",
-      "imageUrl": "/placeholders/leadership-1.svg",
+      "imageUrl": "/placeholders/leadership-1.png",
       "imageHint": "man ceo"
     },
     {
       "id": "leadership-2",
       "description": "Portrait of a CTO",
-      "imageUrl": "/placeholders/leadership-2.svg",
+      "imageUrl": "/placeholders/leadership-2.png",
       "imageHint": "woman cto"
     },
     {
       "id": "humanoid-hero",
       "description": "A futuristic humanoid robot looking at a screen with data",
-      "imageUrl": "/placeholders/humanoid-hero.svg",
+      "imageUrl": "/placeholders/humanoid-hero.png",
       "imageHint": "humanoid robot"
     },
     {
       "id": "humanoid-assist",
       "description": "A humanoid robot assisting a person in a lab",
-      "imageUrl": "/placeholders/humanoid-assist.svg",
+      "imageUrl": "/placeholders/humanoid-assist.png",
       "imageHint": "robot assistance"
     },
     {
       "id": "humanoid-virtual",
       "description": "A virtual reality interface showing the internals of a humanoid robot",
-      "imageUrl": "/placeholders/humanoid-virtual.svg",
+      "imageUrl": "/placeholders/humanoid-virtual.png",
       "imageHint": "virtual robotics"
     },
     {
       "id": "healthmate-hero",
       "description": "A dark, premium hero with a silhouetted humanoid outline and a soft glow.",
-      "imageUrl": "/placeholders/healthmate-hero.svg",
+      "imageUrl": "/placeholders/healthmate-hero.png",
       "imageHint": "humanoid silhouette"
     },
     {
       "id": "project-healthmate",
-      "imageUrl": "/placeholders/project-healthmate.svg",
+      "imageUrl": "/placeholders/project-healthmate.png",
       "description": "Healthmate Project",
       "imageHint": "robot healthcare"
     },
     {
       "id": "project-fda",
-      "imageUrl": "/placeholders/project-fda.svg",
+      "imageUrl": "/placeholders/project-fda.png",
       "description": "FDA Project",
       "imageHint": "compliance dashboard"
     },
     {
       "id": "project-robotics",
-      "imageUrl": "/placeholders/project-robotics.svg",
+      "imageUrl": "/placeholders/project-robotics.png",
       "description": "Robotics Project",
       "imageHint": "robot simulation"
     },
     {
       "id": "project-federated",
-      "imageUrl": "/placeholders/project-federated.svg",
+      "imageUrl": "/placeholders/project-federated.png",
       "description": "Federated Learning Project",
       "imageHint": "wearable data"
     },
     {
       "id": "project-ehr",
-      "imageUrl": "/placeholders/project-ehr.svg",
+      "imageUrl": "/placeholders/project-ehr.png",
       "description": "EHR Project",
       "imageHint": "medical record"
     },
     {
       "id": "home-hero-bg",
-      "imageUrl": "/placeholders/home-hero-bg.svg",
+      "imageUrl": "/placeholders/home-hero-bg.png",
       "description": "Abstract background image for the hero section",
       "imageHint": "abstract circuits"
     },
     {
       "id": "home-vision-bg",
-      "imageUrl": "/placeholders/home-vision-bg.svg",
+      "imageUrl": "/placeholders/home-vision-bg.png",
       "description": "Abstract background image for the vision section",
       "imageHint": "abstract gradient"
     },
     {
       "id": "careers-hero",
-      "imageUrl": "/placeholders/careers-hero.svg",
+      "imageUrl": "/placeholders/careers-hero.png",
       "description": "A collaborative team working in a modern office",
       "imageHint": "collaborative team"
     },
     {
       "id": "lab-vision-ai",
-      "imageUrl": "/placeholders/lab-vision-ai.svg",
+      "imageUrl": "/placeholders/lab-vision-ai.png",
       "description": "Medical imaging analysis of a brain scan",
       "imageHint": "medical imaging"
     },
     {
       "id": "lab-edge-ai",
-      "imageUrl": "/placeholders/lab-edge-ai.svg",
+      "imageUrl": "/placeholders/lab-edge-ai.png",
       "description": "An edge AI device processing data",
       "imageHint": "edge ai"
     },
     {
       "id": "lab-simulation",
-      "imageUrl": "/placeholders/lab-simulation.svg",
+      "imageUrl": "/placeholders/lab-simulation.png",
       "description": "A simulation of a robot arm in a virtual environment",
       "imageHint": "robot simulation"
     }
