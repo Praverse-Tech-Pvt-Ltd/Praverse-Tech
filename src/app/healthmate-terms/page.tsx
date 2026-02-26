@@ -38,7 +38,7 @@ export default function HealthmateTermsPage() {
           <p>The pre-release product is provided "as is" without any warranties. Praverse Tech makes no guarantees regarding performance.</p>
 
           <h2 id="contact">Contact Us</h2>
-          <p>If you have questions, contact <a href="mailto:contact@praverse.ai">contact@praverse.ai</a></p>
+          <p>If you have questions, contact <a href="mailto:pratham@praversetech.com">pratham@praversetech.com</a></p>
         </main>
       </div>
     </AnimatedSection>

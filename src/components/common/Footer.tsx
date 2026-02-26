@@ -5,8 +5,8 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { Logo } from '@/components/common/Logo';
 import JoinWaitlistButton from './JoinWaitlistButton';
-import { SOCIAL_LINKS, NAV_LINKS } from '@/lib/constants';
-import { Github, Linkedin, Twitter } from 'lucide-react';
+import { NAV_LINKS } from '@/lib/constants';
+import { Linkedin } from 'lucide-react';
 import { WaitlistDialog } from '../healthmate/WaitlistDialog';
 import { NewsletterForm } from './NewsletterForm';
 
@@ -30,17 +30,11 @@ export function Footer() {
                 <Logo imgClassName="h-10 w-auto" />
               </div>
               <p className="text-sm text-muted-foreground leading-relaxed">Bringing validated innovations to market.</p>
-              <address className="text-sm text-muted-foreground not-italic">Bangalore, India · Global Operations</address>
+              <address className="text-sm text-muted-foreground not-italic">TOWER 2 - 413 &amp; 420, Prince Cube, Nayaran Garden, Gotri, Vadodara, Gujarat, India</address>
               <div className="flex items-center gap-3">
-                <div className="flex space-x-3">
-                  <Link href={SOCIAL_LINKS.twitter} target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-foreground transition-colors focus-ring rounded-sm" aria-label="Twitter">
-                    <Twitter className="h-5 w-5" />
-                  </Link>
-                  <Link href={SOCIAL_LINKS.linkedin} target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-foreground transition-colors focus-ring rounded-sm" aria-label="LinkedIn">
+                <div className="flex">
+                  <Link href="https://www.linkedin.com/in/pratham-shrivastav-b81180251/" target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-foreground transition-colors focus-ring rounded-sm" aria-label="LinkedIn">
                     <Linkedin className="h-5 w-5" />
-                  </Link>
-                  <Link href={SOCIAL_LINKS.github} target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-foreground transition-colors focus-ring rounded-sm" aria-label="GitHub">
-                    <Github className="h-5 w-5" />
                   </Link>
                 </div>
                 <div className="ml-auto md:ml-0">

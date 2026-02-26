@@ -41,7 +41,7 @@ export default function TermsPage() {
           <p>These Terms shall be governed and construed in accordance with the laws of India.</p>
 
           <h2 id="contact">6. Contact Us</h2>
-          <p>To resolve a complaint or request more information, contact: <a href="mailto:contact@praverse.ai">contact@praverse.ai</a></p>
+          <p>To resolve a complaint or request more information, contact: <a href="mailto:pratham@praversetech.com">pratham@praversetech.com</a></p>
         </main>
       </div>
     </AnimatedSection>

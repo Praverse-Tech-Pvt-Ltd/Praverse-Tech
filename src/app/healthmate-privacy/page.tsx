@@ -41,7 +41,7 @@ export default function HealthmatePrivacyPage() {
           <p>A comprehensive privacy policy will be published upon public launch, compliant with healthcare regulations.</p>
 
           <h2 id="contact">Contact Us</h2>
-          <p>Questions? Contact <a href="mailto:contact@praverse.ai">contact@praverse.ai</a></p>
+          <p>Questions? Contact <a href="mailto:pratham@praversetech.com">pratham@praversetech.com</a></p>
         </main>
       </div>
     </AnimatedSection>

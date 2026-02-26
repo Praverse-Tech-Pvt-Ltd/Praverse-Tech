@@ -44,7 +44,7 @@ export default function PrivacyPage() {
           <p>We implement measures to protect your data, but no system is completely secure.</p>
 
           <h2 id="contact">Contact Us</h2>
-          <p>Questions? Contact <a href="mailto:contact@praverse.ai">contact@praverse.ai</a></p>
+          <p>Questions? Contact <a href="mailto:pratham@praversetech.com">pratham@praversetech.com</a></p>
         </main>
       </div>
     </AnimatedSection>

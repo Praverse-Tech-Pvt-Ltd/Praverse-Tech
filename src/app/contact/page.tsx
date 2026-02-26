@@ -63,30 +63,30 @@ export default function ContactPage() {
                 <div className="flex items-start gap-4">
                   <MapPin className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
                   <div>
-                    <h3 className="font-semibold">Our Office</h3>
-                    <p className="text-muted-foreground text-sm mt-1 leading-relaxed">
-                      Praverse Tech Pvt Ltd,
-                      <br />
-                      Bangalore, India
-                    </p>
+                      <h3 className="font-semibold">Our Office</h3>
+                      <p className="text-muted-foreground text-sm mt-1 leading-relaxed">
+                        TOWER 2 - 413 & 420, Prince Cube, Nayaran Garden, Gotri,
+                        <br />
+                        Vadodara, Gujarat, India
+                      </p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
                   <Mail className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
                   <div>
-                    <h3 className="font-semibold">Email Us</h3>
-                    <p className="text-muted-foreground text-sm mt-1">
-                      contact@praverse.ai
-                    </p>
+                      <h3 className="font-semibold">Email Us</h3>
+                      <p className="text-muted-foreground text-sm mt-1">
+                        pratham@praversetech.com
+                      </p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
                   <Phone className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
                   <div>
-                    <h3 className="font-semibold">Call Us</h3>
-                    <p className="text-muted-foreground text-sm mt-1">
-                      +91 123 456 7890
-                    </p>
+                      <h3 className="font-semibold">Call Us</h3>
+                      <p className="text-muted-foreground text-sm mt-1">
+                        +91 9313247264
+                      </p>
                   </div>
                 </div>
               </div>
