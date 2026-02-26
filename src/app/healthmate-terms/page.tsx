@@ -16,32 +16,31 @@ export default function HealthmateTermsPage() {
   }, []);
 
   return (
-    <AnimatedSection className="container prose mx-auto max-w-4xl py-16 dark:prose-invert">
-      <h1>HealthMate Terms of Service</h1>
-      <p>Last updated: {currentDate}</p>
+    <AnimatedSection className="section-padding bg-background">
+      <div className="container mx-auto max-w-5xl">
+        <header className="mb-8 rounded-lg p-8 bg-card/40 backdrop-blur-sm">
+          <h1 className="text-3xl font-headline mb-2">HealthMate Terms of Service</h1>
+          <p className="text-sm text-muted-foreground">Last updated: {currentDate}</p>
+          <p className="mt-4 text-base text-muted-foreground max-w-2xl">These are pre-release terms for HealthMate. Access during beta is restricted and subject to NDA.</p>
+        </header>
 
-      <h2>1. Introduction</h2>
-      <p>
-        These are placeholder Terms of Service for the HealthMate product by Praverse Tech Pvt Ltd. This document will be updated prior to public launch.
-      </p>
+        <main className="prose dark:prose-invert bg-card/0 p-6 rounded-lg">
+          <h2 id="intro">1. Introduction</h2>
+          <p>These are placeholder Terms of Service for the HealthMate product by Praverse Tech Pvt Ltd. This document will be updated prior to public launch.</p>
 
-      <h2>2. Use of Pre-Release Product</h2>
-      <p>
-        Access to HealthMate during its private beta and limited pilot phases is by invitation only and is subject to a Non-Disclosure Agreement (NDA). Information shared during this period is confidential.
-      </p>
+          <h2 id="pre-release">2. Use of Pre-Release Product</h2>
+          <p>Access during private beta and pilot phases is by invitation only and is subject to NDAs.</p>
 
-      <h2>3. Intellectual Property</h2>
-      <p>
-        HealthMate and all related technology are the exclusive proprietary and patent-pending intellectual property of Praverse Tech Pvt Ltd.
-      </p>
-      
-      <h2>4. Disclaimer</h2>
-      <p>The pre-release product is provided "as is" without any warranties. Praverse Tech makes no guarantees regarding performance, reliability, or fitness for a particular purpose.</p>
+          <h2 id="ip">3. Intellectual Property</h2>
+          <p>HealthMate and related technology are proprietary and patent-pending.</p>
 
-      <h2>Contact Us</h2>
-      <p>
-        If you have questions, please contact us at: contact@praverse.ai
-      </p>
+          <h2 id="disclaimer">4. Disclaimer</h2>
+          <p>The pre-release product is provided "as is" without any warranties. Praverse Tech makes no guarantees regarding performance.</p>
+
+          <h2 id="contact">Contact Us</h2>
+          <p>If you have questions, contact <a href="mailto:contact@praverse.ai">contact@praverse.ai</a></p>
+        </main>
+      </div>
     </AnimatedSection>
   );
 }
