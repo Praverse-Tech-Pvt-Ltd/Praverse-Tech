@@ -29,6 +29,8 @@ export function Header() {
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isWaitlistOpen, setIsWaitlistOpen] = useState(false);
+  const [isSheetOpen, setIsSheetOpen] = useState(false);
+  const [openMobileMenus, setOpenMobileMenus] = useState<Record<string, boolean>>({});
 
   useEffect(() => {
     const handleScroll = () => {
@@ -43,15 +45,41 @@ export function Header() {
 
     if (link.children) {
       if (isMobile) {
+        const isOpen = !!openMobileMenus[link.label];
         return (
           <div key={link.label}>
-            <h4 className="font-semibold px-4">{link.label}</h4>
-            <div className="flex flex-col space-y-2 mt-2">
+            <div className="flex items-center justify-between px-4">
+              <h4 className="font-semibold">{link.label}</h4>
+              <button
+                aria-expanded={isOpen}
+                aria-controls={`${link.label}-mobile-menu`}
+                onClick={() =>
+                  setOpenMobileMenus((s) => ({ ...s, [link.label]: !isOpen }))
+                }
+                className="p-2 rounded-md hover:bg-muted/20"
+              >
+                <ChevronDown
+                  className={`h-4 w-4 transition-transform ${
+                    isOpen ? "rotate-180" : "rotate-0"
+                  }`}
+                />
+              </button>
+            </div>
+            <div
+              id={`${link.label}-mobile-menu`}
+              className={`flex flex-col space-y-2 mt-2 overflow-hidden transition-[max-height] duration-200 ${
+                isOpen ? "max-h-96" : "max-h-0"
+              }`}
+            >
               {link.children.map((child) => (
                 <Link
                   key={child.href}
                   href={child.href}
-                  className="text-muted-foreground pl-8 pr-4 py-2"
+                  onClick={() => {
+                    setIsSheetOpen(false);
+                    setOpenMobileMenus({});
+                  }}
+                  className="text-muted-foreground pl-4 pr-4 py-2"
                 >
                   {child.label}
                 </Link>
@@ -88,6 +116,7 @@ export function Header() {
       <Link
         key={link.href}
         href={link.href}
+        onClick={isMobile ? () => setIsSheetOpen(false) : undefined}
         className={cn(
           "text-sm font-medium transition-colors hover:text-primary",
           pathname === link.href ? "text-primary" : "text-muted-foreground",
@@ -108,8 +137,8 @@ export function Header() {
       )}
     >
       <div className="container flex h-16 items-center">
-        <Link href="/" className="mr-8 flex items-center focus-ring rounded-sm">
-          <Logo imgClassName="h-24 w-auto" />
+        <Link href="/" className="mr-8 flex items-center focus-ring rounded-sm md:hidden">
+          <Logo imgClassName="h-16 w-auto md:h-24 md:w-auto" />
         </Link>
         <nav className="hidden items-center space-x-1 md:flex">
           {NAV_LINKS.map((link) => renderNavLink(link, false))}
@@ -124,7 +153,7 @@ export function Header() {
             </div>
           </WaitlistDialog>
           <div className="md:hidden">
-            <Sheet>
+            <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon" className="focus-ring">
                   <Menu className="h-6 w-6" />
@@ -142,7 +171,7 @@ export function Header() {
                   </SheetDescription>
                 </SheetHeader>
                 <Link href="/" className="mb-8 flex items-center">
-                  <Logo />
+                  <Logo imgClassName="h-16 w-auto" />
                 </Link>
                 <nav className="flex flex-col space-y-4">
                   {NAV_LINKS.map((link) => renderNavLink(link, true))}

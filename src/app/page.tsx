@@ -15,7 +15,7 @@ import { Insights } from '@/components/home/Insights';
 export default function Home() {
   const posts = getBlogPosts();
   const founderPost = posts.find(p => p.slug === 'future-of-ai-in-healthcare');
-  const otherPosts = posts.filter(p => p.slug !== 'future-of-ai-in-healthcare').slice(0, 2);
+  const otherPosts = [];
 
   return (
     <div className="flex flex-col min-h-screen bg-background">

@@ -30,9 +30,7 @@ export default function BlogPage() {
   const founderPost = posts.find(
     (p) => p.slug === "future-of-ai-in-healthcare",
   );
-  const otherPosts = posts.filter(
-    (p) => p.slug !== "future-of-ai-in-healthcare",
-  );
+  const otherPosts: typeof posts = [];
   const founderAvatar = PlaceHolderImages.find((p) => p.id === "avatar-2");
   const founderImage = founderPost
     ? PlaceHolderImages.find((p) => p.id === founderPost.metadata.image)

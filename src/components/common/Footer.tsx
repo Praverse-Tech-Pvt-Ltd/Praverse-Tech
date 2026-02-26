@@ -26,9 +26,6 @@ export function Footer() {
         <div className="rounded-2xl bg-card/60 backdrop-blur-md p-8">
           <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-8">
             <div className="md:w-1/3 space-y-4">
-              <div className="h-10 overflow-visible flex items-center" style={{ transform: 'scale(3)', transformOrigin: 'left center' }}>
-                <Logo imgClassName="h-10 w-auto" />
-              </div>
               <p className="text-sm text-muted-foreground leading-relaxed">Bringing validated innovations to market.</p>
               <address className="text-sm text-muted-foreground not-italic">TOWER 2 - 413 &amp; 420, Prince Cube, Nayaran Garden, Gotri, Vadodara, Gujarat, India</address>
               <div className="flex items-center gap-3">
