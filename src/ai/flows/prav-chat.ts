@@ -1,4 +1,4 @@
-'use server';
+"use server";
 
 /**
  * @fileOverview This file defines the conversational AI flow for Prav, the site-wide assistant.
@@ -8,31 +8,30 @@
  * - PravChatOutput - The return type for the pravChat function.
  */
 
-import {ai} from '@/ai/genkit';
-import {z} from 'genkit';
+import { ai } from "@/ai/genkit";
+import { z } from "genkit";
 
 // Defines the structure for a single message in the conversation history
 const MessageSchema = z.object({
-  role: z.enum(['user', 'model']),
+  role: z.enum(["user", "model"]),
   content: z.string(),
 });
 
-export const PravChatInputSchema = z.object({
-  history: z.array(MessageSchema).describe('The conversation history.'),
+const PravChatInputSchema = z.object({
+  history: z.array(MessageSchema).describe("The conversation history."),
 });
-export type PravChatInput = z.infer<typeof PravChatInputSchema>;
+type PravChatInput = z.infer<typeof PravChatInputSchema>;
 
-export const PravChatOutputSchema = z.object({
+const PravChatOutputSchema = z.object({
   response: z.string().describe("Prav's response to the user."),
 });
-export type PravChatOutput = z.infer<typeof PravChatOutputSchema>;
-
+type PravChatOutput = z.infer<typeof PravChatOutputSchema>;
 
 const prompt = ai.definePrompt({
-    name: 'pravChatPrompt',
-    input: {schema: PravChatInputSchema},
-    output: {schema: PravChatOutputSchema},
-    prompt: `You are Prav, the friendly, helpful, and slightly futuristic AI companion for Praverse Tech. Your goal is to assist users, answer their questions about Praverse, and gently guide them toward our services when relevant. Always maintain a professional and encouraging tone.
+  name: "pravChatPrompt",
+  input: { schema: PravChatInputSchema },
+  output: { schema: PravChatOutputSchema },
+  prompt: `You are Prav, the friendly, helpful, and slightly futuristic AI companion for Praverse Tech. Your goal is to assist users, answer their questions about Praverse, and gently guide them toward our services when relevant. Always maintain a professional and encouraging tone.
 
     Here is some context about Praverse Tech's domains. Use this to answer user questions:
 
@@ -53,18 +52,18 @@ const prompt = ai.definePrompt({
     `,
 });
 
-export const pravChatFlow = ai.defineFlow(
-    {
-        name: 'pravChatFlow',
-        inputSchema: PravChatInputSchema,
-        outputSchema: PravChatOutputSchema,
-    },
-    async (input) => {
-        const {output} = await prompt(input);
-        return output!;
-    }
+const pravChatFlow = ai.defineFlow(
+  {
+    name: "pravChatFlow",
+    inputSchema: PravChatInputSchema,
+    outputSchema: PravChatOutputSchema,
+  },
+  async (input) => {
+    const { output } = await prompt(input);
+    return output!;
+  },
 );
 
 export async function pravChat(input: PravChatInput) {
-    return await pravChatFlow(input);
+  return await pravChatFlow(input);
 }

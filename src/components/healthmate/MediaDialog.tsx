@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useForm } from "react-hook-form";
@@ -23,10 +22,9 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
-import { addDocumentNonBlocking, useFirestore } from "@/firebase";
-import { collection } from "firebase/firestore";
 import { Checkbox } from "../ui/checkbox";
 import { EmbargoBadge } from "./EmbargoBadge";
+import { submitMediaKitRequest } from "@/app/actions";
 
 const mediaSchema = z.object({
   name: z.string().min(2, "Name is required."),
@@ -40,9 +38,16 @@ const mediaSchema = z.object({
 
 type MediaFormValues = z.infer<typeof mediaSchema>;
 
-export function MediaDialog({ children, open, onOpenChange }: { children: React.ReactNode, open: boolean, onOpenChange: (open: boolean) => void }) {
+export function MediaDialog({
+  children,
+  open,
+  onOpenChange,
+}: {
+  children: React.ReactNode;
+  open: boolean;
+  onOpenChange: (open: boolean) => void;
+}) {
   const { toast } = useToast();
-  const firestore = useFirestore();
 
   const form = useForm<MediaFormValues>({
     resolver: zodResolver(mediaSchema),
@@ -56,18 +61,21 @@ export function MediaDialog({ children, open, onOpenChange }: { children: React.
   });
 
   async function onSubmit(values: MediaFormValues) {
-    if (!firestore) return;
-    
-    const mediaRequestCollection = collection(firestore, "hm_media_requests");
-    
-    addDocumentNonBlocking(mediaRequestCollection, {
-        ...values,
-        ts: new Date().toISOString(),
-    });
+    const result = await submitMediaKitRequest(values);
+
+    if (!result.success) {
+      toast({
+        variant: "destructive",
+        title: "Something went wrong.",
+        description: result.message,
+      });
+      return;
+    }
 
     toast({
       title: "Media Kit Request Sent",
-      description: "Our team will review your request. If approved, you will receive the media kit at the email provided.",
+      description:
+        "Our team will review your request. If approved, you will receive the media kit at the email provided.",
     });
 
     form.reset();
@@ -84,7 +92,8 @@ export function MediaDialog({ children, open, onOpenChange }: { children: React.
             <EmbargoBadge />
           </div>
           <DialogDescription>
-            For verified press members only. All information is under strict embargo until public launch.
+            For verified press members only. All information is under strict
+            embargo until public launch.
           </DialogDescription>
         </DialogHeader>
         <Form {...form}>
@@ -154,14 +163,19 @@ export function MediaDialog({ children, open, onOpenChange }: { children: React.
                   </FormControl>
                   <div className="space-y-1 leading-none">
                     <FormLabel>
-                      I acknowledge that all materials are under press embargo until further notice.
+                      I acknowledge that all materials are under press embargo
+                      until further notice.
                     </FormLabel>
                     <FormMessage />
                   </div>
                 </FormItem>
               )}
             />
-            <Button type="submit" disabled={form.formState.isSubmitting} className="w-full">
+            <Button
+              type="submit"
+              disabled={form.formState.isSubmitting}
+              className="w-full"
+            >
               {form.formState.isSubmitting ? "Submitting..." : "Submit Request"}
             </Button>
           </form>

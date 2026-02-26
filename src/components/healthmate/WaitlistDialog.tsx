@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useForm } from "react-hook-form";
@@ -23,17 +22,18 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
-import { addDocumentNonBlocking, useFirestore } from "@/firebase";
-import { collection } from "firebase/firestore";
 import { Checkbox } from "../ui/checkbox";
 import { Textarea } from "../ui/textarea";
+import { submitHealthMateWaitlist } from "@/app/actions";
 
 const waitlistSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters."),
   email: z.string().email("Invalid email address."),
   org: z.string().min(2, "Organization must be at least 2 characters."),
   role: z.string().min(2, "Role must be at least 2 characters."),
-  useCase: z.string().min(10, "Please describe your use case in at least 10 characters."),
+  useCase: z
+    .string()
+    .min(10, "Please describe your use case in at least 10 characters."),
   consent: z.literal<boolean>(true, {
     errorMap: () => ({ message: "You must consent to join the waitlist." }),
   }),
@@ -41,9 +41,16 @@ const waitlistSchema = z.object({
 
 type WaitlistFormValues = z.infer<typeof waitlistSchema>;
 
-export function WaitlistDialog({ children, open, onOpenChange }: { children: React.ReactNode, open: boolean, onOpenChange: (open: boolean) => void }) {
+export function WaitlistDialog({
+  children,
+  open,
+  onOpenChange,
+}: {
+  children: React.ReactNode;
+  open: boolean;
+  onOpenChange: (open: boolean) => void;
+}) {
   const { toast } = useToast();
-  const firestore = useFirestore();
 
   const form = useForm<WaitlistFormValues>({
     resolver: zodResolver(waitlistSchema),
@@ -58,14 +65,16 @@ export function WaitlistDialog({ children, open, onOpenChange }: { children: Rea
   });
 
   async function onSubmit(values: WaitlistFormValues) {
-    if (!firestore) return;
+    const result = await submitHealthMateWaitlist(values);
 
-    const waitlistCollection = collection(firestore, "hm_waitlist");
-    
-    addDocumentNonBlocking(waitlistCollection, {
-        ...values,
-        ts: new Date().toISOString(),
-    });
+    if (!result.success) {
+      toast({
+        variant: "destructive",
+        title: "Something went wrong.",
+        description: result.message,
+      });
+      return;
+    }
 
     toast({
       title: "You're on the list!",
@@ -134,20 +143,26 @@ export function WaitlistDialog({ children, open, onOpenChange }: { children: Rea
                 <FormItem>
                   <FormLabel>Your Role</FormLabel>
                   <FormControl>
-                    <Input placeholder="e.g., CTO, Innovation Lead" {...field} />
+                    <Input
+                      placeholder="e.g., CTO, Innovation Lead"
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
               )}
             />
-             <FormField
+            <FormField
               control={form.control}
               name="useCase"
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Intended Use Case</FormLabel>
                   <FormControl>
-                    <Textarea placeholder="How do you envision using HealthMate?" {...field} />
+                    <Textarea
+                      placeholder="How do you envision using HealthMate?"
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -166,7 +181,8 @@ export function WaitlistDialog({ children, open, onOpenChange }: { children: Rea
                   </FormControl>
                   <div className="space-y-1 leading-none">
                     <FormLabel>
-                      I agree to join the waitlist and receive communications about HealthMate.
+                      I agree to join the waitlist and receive communications
+                      about HealthMate.
                     </FormLabel>
                     <FormMessage />
                   </div>

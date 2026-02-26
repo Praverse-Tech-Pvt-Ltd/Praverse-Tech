@@ -1,10 +1,9 @@
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
+import readingTime from "reading-time";
 
-import fs from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
-import readingTime from 'reading-time';
-
-const postsDirectory = path.join(process.cwd(), 'src', 'content', 'blog');
+const postsDirectory = path.join(process.cwd(), "src", "content", "blog");
 
 export interface PostMetadata {
   title: string;
@@ -23,22 +22,37 @@ export interface Post {
 }
 
 export function getBlogPosts(): Post[] {
-  const fileNames = fs.readdirSync(postsDirectory);
-  const allPosts = fileNames.map((fileName) => {
-    const slug = fileName.replace(/\.mdx$/, '');
-    const fullPath = path.join(postsDirectory, fileName);
-    const fileContents = fs.readFileSync(fullPath, 'utf8');
-    const { data, content } = matter(fileContents);
+  if (!fs.existsSync(postsDirectory)) {
+    return [];
+  }
 
-    return {
-      slug,
-      metadata: data as PostMetadata,
-      content,
-      readingTime: readingTime(content).text,
-    };
-  });
+  const fileNames = fs
+    .readdirSync(postsDirectory)
+    .filter((fileName) => fileName.endsWith(".mdx"));
+  const allPosts = fileNames
+    .map((fileName) => {
+      try {
+        const slug = fileName.replace(/\.mdx$/, "");
+        const fullPath = path.join(postsDirectory, fileName);
+        const fileContents = fs.readFileSync(fullPath, "utf8");
+        const { data, content } = matter(fileContents);
 
-  return allPosts.sort((a, b) => new Date(b.metadata.date).getTime() - new Date(a.metadata.date).getTime());
+        return {
+          slug,
+          metadata: data as PostMetadata,
+          content,
+          readingTime: readingTime(content).text,
+        };
+      } catch {
+        return null;
+      }
+    })
+    .filter((post): post is Post => post !== null);
+
+  return allPosts.sort(
+    (a, b) =>
+      new Date(b.metadata.date).getTime() - new Date(a.metadata.date).getTime(),
+  );
 }
 
 export function getPostBySlug(slug: string): Post | undefined {
@@ -46,7 +60,14 @@ export function getPostBySlug(slug: string): Post | undefined {
   if (!fs.existsSync(fullPath)) {
     return undefined;
   }
-  const fileContents = fs.readFileSync(fullPath, 'utf8');
+  let fileContents = "";
+
+  try {
+    fileContents = fs.readFileSync(fullPath, "utf8");
+  } catch {
+    return undefined;
+  }
+
   const { data, content } = matter(fileContents);
 
   return {
