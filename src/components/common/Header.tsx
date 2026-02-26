@@ -90,7 +90,7 @@ export function Header() {
     >
       <div className="container flex h-16 items-center">
         <Link href="/" className="mr-8 flex items-center focus-ring rounded-sm">
-          <Logo />
+          <Logo imgClassName="h-24 w-auto" />
         </Link>
         <nav className="hidden items-center space-x-1 md:flex">
           {NAV_LINKS.map(link => renderNavLink(link, false))}
@@ -98,7 +98,7 @@ export function Header() {
         <div className="flex flex-1 items-center justify-end space-x-2">
           <WaitlistDialog open={isWaitlistOpen} onOpenChange={setIsWaitlistOpen}>
             <div className="hidden sm:inline-flex">
-              <JoinWaitlistButton onClick={() => setIsWaitlistOpen(true)}>Join Waitlist</JoinWaitlistButton>
+              <JoinWaitlistButton className="small" onClick={() => setIsWaitlistOpen(true)}>Join Waitlist</JoinWaitlistButton>
             </div>
           </WaitlistDialog>
           <div className="md:hidden">

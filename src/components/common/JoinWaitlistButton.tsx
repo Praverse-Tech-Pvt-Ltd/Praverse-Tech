@@ -39,6 +39,23 @@ export default function JoinWaitlistButton({ onClick, children, className }: Pro
           border-color: #ffffffcc;
         }
 
+        /* Small modifier for compact placements (header/footer) */
+        .join-btn.small {
+          padding: 0.375rem 0.75rem; /* px-3 py-1.5 */
+          font-size: 0.875rem; /* text-sm */
+          gap: 0.5rem;
+          box-shadow: 0 6px 12px rgba(0,0,0,0.12);
+        }
+
+        .join-btn.small:hover {
+          transform: scale(1.03);
+        }
+
+        .join-btn.small :global(.icon) {
+          height: 1rem;
+          width: 1rem;
+        }
+
         .join-btn:hover :global(.icon) {
           transform: translateX(4px);
         }

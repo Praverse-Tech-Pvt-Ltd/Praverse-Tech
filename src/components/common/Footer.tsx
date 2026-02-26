@@ -3,7 +3,7 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
-import { Logo } from '@/components/common/Logo';
+import CircularText from './CircularText';
 import JoinWaitlistButton from './JoinWaitlistButton';
 import { SOCIAL_LINKS, NAV_LINKS } from '@/lib/constants';
 import { Github, Linkedin, Twitter } from 'lucide-react';
@@ -26,7 +26,16 @@ export function Footer() {
         <div className="rounded-2xl bg-card/60 backdrop-blur-md p-8">
           <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-8">
             <div className="md:w-1/3 space-y-4">
-              <Logo />
+              <div className="h-10 overflow-visible flex items-center" style={{ transformOrigin: 'left center' }}>
+                <CircularText
+                  text="Praverse Tech Pvt. Ltd."
+                  onHover="speedUp"
+                  spinDuration={20}
+                  className="w-[140px] h-[140px] text-sm"
+                >
+                  <img src="/logo rotate.png" alt="Praverse" className="h-[60%] w-auto object-contain" />
+                </CircularText>
+              </div>
               <p className="text-sm text-muted-foreground leading-relaxed">Bringing validated innovations to market.</p>
               <address className="text-sm text-muted-foreground not-italic">Bangalore, India · Global Operations</address>
               <div className="flex items-center gap-3">
@@ -42,7 +51,7 @@ export function Footer() {
                   </Link>
                 </div>
                 <div className="ml-auto md:ml-0">
-                  <JoinWaitlistButton onClick={() => setIsWaitlistOpen(true)}>Join Waitlist</JoinWaitlistButton>
+                  <JoinWaitlistButton className="small" onClick={() => setIsWaitlistOpen(true)}>Join Waitlist</JoinWaitlistButton>
                 </div>
               </div>
             </div>
@@ -84,13 +93,6 @@ export function Footer() {
             <div>
               <p>© {new Date().getFullYear()} Praverse Tech Pvt Ltd. All rights reserved.</p>
               <p className="text-xs">HealthMate is proprietary and patent-pending. Details available under NDA.</p>
-            </div>
-            <div className="flex items-center gap-4">
-              <nav className="flex items-center gap-3">
-                <Link href="/sitemap.xml" className="hover:text-foreground">Sitemap</Link>
-                <Link href="/contact" className="hover:text-foreground">Contact</Link>
-              </nav>
-              <div className="text-muted-foreground text-xs">Made with ♥️</div>
             </div>
           </div>
         </div>
