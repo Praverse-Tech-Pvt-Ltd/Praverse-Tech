@@ -1,23 +1,21 @@
-
-'use client';
-import * as React from 'react';
-import { Card, CardContent } from '@/components/ui/card';
+"use client";
+import * as React from "react";
+import { Card, CardContent } from "@/components/ui/card";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
-} from '@/components/ui/carousel';
-import { FEATURED_PROJECTS } from '@/lib/data';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
-import Image from 'next/image';
-import { motion } from 'framer-motion';
-import Autoplay from "embla-carousel-autoplay"
-
+} from "@/components/ui/carousel";
+import { FEATURED_PROJECTS } from "@/lib/data";
+import { PlaceHolderImages } from "@/lib/placeholder-images";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import Autoplay from "embla-carousel-autoplay";
 
 export function FeaturedProjects() {
   const plugin = React.useRef(
-    Autoplay({ delay: 3000, stopOnInteraction: true })
-  )
+    Autoplay({ delay: 3000, stopOnInteraction: true }),
+  );
 
   return (
     <section className="py-20 md:py-28 bg-muted">
@@ -49,9 +47,14 @@ export function FeaturedProjects() {
         >
           <CarouselContent>
             {FEATURED_PROJECTS.map((project) => {
-              const image = PlaceHolderImages.find(p => p.id === project.imageId);
+              const image = PlaceHolderImages.find(
+                (p) => p.id === project.imageId,
+              );
               return (
-                <CarouselItem key={project.title} className="md:basis-1/2 lg:basis-1/3">
+                <CarouselItem
+                  key={project.title}
+                  className="md:basis-1/2 lg:basis-1/3"
+                >
                   <div className="p-1">
                     <Card className="overflow-hidden">
                       <CardContent className="flex flex-col aspect-video items-center justify-center p-0 relative">
@@ -66,11 +69,13 @@ export function FeaturedProjects() {
                             data-ai-hint={image.imageHint}
                           />
                         )}
-                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent z-10" />
-                         <div className="relative z-20 text-center text-white p-6 mt-auto w-full">
-                           <h3 className="font-bold text-lg">{project.title}</h3>
-                           <p className="text-sm opacity-80">{project.description}</p>
-                         </div>
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent z-10" />
+                        <div className="relative z-20 text-center text-white p-6 mt-auto w-full">
+                          <h3 className="font-bold text-lg">{project.title}</h3>
+                          <p className="text-sm opacity-80">
+                            {project.description}
+                          </p>
+                        </div>
                       </CardContent>
                     </Card>
                   </div>
@@ -83,4 +88,3 @@ export function FeaturedProjects() {
     </section>
   );
 }
-
