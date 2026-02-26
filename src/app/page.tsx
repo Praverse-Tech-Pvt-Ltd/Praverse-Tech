@@ -4,7 +4,7 @@ import { Hero } from '@/components/home/Hero';
 import { Vision } from '@/components/home/Vision';
 import { Domains } from '@/components/home/Domains';
 import { Cta } from '@/components/home/Cta';
-import { getBlogPosts } from '@/lib/blog';
+import { getBlogPosts, type Post } from '@/lib/blog';
 import { InnovationTimeline } from '@/components/home/InnovationTimeline';
 import { ResearchPublications } from '@/components/home/ResearchPublications';
 import { Collaborations } from '@/components/home/Collaborations';
@@ -15,7 +15,7 @@ import { Insights } from '@/components/home/Insights';
 export default function Home() {
   const posts = getBlogPosts();
   const founderPost = posts.find(p => p.slug === 'future-of-ai-in-healthcare');
-  const otherPosts = [];
+  const otherPosts: Post[] = [];
 
   return (
     <div className="flex flex-col min-h-screen bg-background">
