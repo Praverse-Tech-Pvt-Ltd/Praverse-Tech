@@ -1,5 +1,5 @@
-import { Renderer, Program, Mesh, Color, Triangle } from 'ogl';
-import { useEffect, useRef } from 'react';
+import { Renderer, Program, Mesh, Color, Triangle } from "ogl";
+import { useEffect, useRef } from "react";
 
 const vertexShader = `
 attribute vec2 uv;
@@ -57,7 +57,7 @@ export default function Iridescence({
   amplitude = 0.1,
   mouseReact = true,
   ...rest
-}: IridescenceProps & React.HTMLAttributes<HTMLDivElement>) {
+}: IridescenceProps & Omit<React.HTMLAttributes<HTMLDivElement>, "color">) {
   const ctnDom = useRef<HTMLDivElement>(null);
   const mousePos = useRef({ x: 0.5, y: 0.5 });
 
@@ -65,7 +65,7 @@ export default function Iridescence({
     if (!ctnDom.current) return;
     const ctn = ctnDom.current;
     const renderer = new Renderer();
-    const gl = renderer.gl as WebGLRenderingContext;
+    const gl = renderer.gl;
     gl.clearColor(1, 1, 1, 1);
 
     let program: Program;
@@ -78,11 +78,11 @@ export default function Iridescence({
         program.uniforms.uResolution.value = new Color(
           gl.canvas.width,
           gl.canvas.height,
-          gl.canvas.width / gl.canvas.height
+          gl.canvas.width / gl.canvas.height,
         );
       }
     }
-    window.addEventListener('resize', resize, false);
+    window.addEventListener("resize", resize, false);
     resize();
 
     const geometry = new Triangle(gl);
@@ -93,12 +93,18 @@ export default function Iridescence({
         uTime: { value: 0 },
         uColor: { value: new Color(...color) },
         uResolution: {
-          value: new Color(gl.canvas.width, gl.canvas.height, gl.canvas.width / gl.canvas.height)
+          value: new Color(
+            gl.canvas.width,
+            gl.canvas.height,
+            gl.canvas.width / gl.canvas.height,
+          ),
         },
-        uMouse: { value: new Float32Array([mousePos.current.x, mousePos.current.y]) },
+        uMouse: {
+          value: new Float32Array([mousePos.current.x, mousePos.current.y]),
+        },
         uAmplitude: { value: amplitude },
-        uSpeed: { value: speed }
-      }
+        uSpeed: { value: speed },
+      },
     });
 
     const mesh = new Mesh(gl, { geometry, program });
@@ -121,17 +127,17 @@ export default function Iridescence({
       program.uniforms.uMouse.value[1] = y;
     }
     if (mouseReact) {
-      ctn.addEventListener('mousemove', handleMouseMove);
+      ctn.addEventListener("mousemove", handleMouseMove);
     }
 
     return () => {
       cancelAnimationFrame(animateId);
-      window.removeEventListener('resize', resize);
+      window.removeEventListener("resize", resize);
       if (mouseReact) {
-        ctn.removeEventListener('mousemove', handleMouseMove);
+        ctn.removeEventListener("mousemove", handleMouseMove);
       }
       if (gl.canvas.parentNode === ctn) ctn.removeChild(gl.canvas);
-      gl.getExtension('WEBGL_lose_context')?.loseContext();
+      gl.getExtension("WEBGL_lose_context")?.loseContext();
     };
   }, [color, speed, amplitude, mouseReact]);
 
