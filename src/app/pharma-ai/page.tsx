@@ -51,6 +51,7 @@ export default function PharmaAiPage() {
             src={heroImage.imageUrl} 
             alt={heroImage.description} 
             fill
+            loading="eager"
             sizes="100vw"
             className="object-cover opacity-20"
             data-ai-hint={heroImage.imageHint}

@@ -73,6 +73,7 @@ export default function BlogPage() {
                       src={founderImage.imageUrl}
                       alt={founderPost.metadata.title}
                       fill
+                      loading="eager"
                       sizes="(min-width: 1024px) 50vw, 100vw"
                       className="object-cover transition-transform duration-700 group-hover:scale-105"
                     />
@@ -132,6 +133,7 @@ export default function BlogPage() {
                               src={image.imageUrl}
                               alt={post.metadata.title}
                               fill
+                              loading="eager"
                               sizes="(min-width: 1280px) 25vw, (min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                               className="object-cover transition-transform duration-500 group-hover:scale-105"
                               data-ai-hint={image.imageHint}

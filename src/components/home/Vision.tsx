@@ -17,6 +17,7 @@ export function Vision() {
                                 src={visionImage.imageUrl} 
                                 alt={visionImage.description} 
                                 fill
+                                loading="eager"
                                 sizes="(min-width: 1024px) 45vw, (min-width: 768px) 50vw, 90vw"
                                 className="object-cover transition-transform duration-700 hover:scale-105"
                                 data-ai-hint={visionImage.imageHint}

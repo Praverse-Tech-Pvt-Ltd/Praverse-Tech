@@ -75,6 +75,7 @@ function Controller() {
                                         src={image.imageUrl}
                                         alt={tab.title}
                                         fill
+                                                                                loading="eager"
                                         sizes="(min-width: 1280px) 40vw, (min-width: 768px) 60vw, 100vw"
                                         className="object-cover"
                                         data-ai-hint={image.imageHint}

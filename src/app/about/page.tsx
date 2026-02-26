@@ -53,7 +53,7 @@ export default function AboutPage() {
             </AnimatedItem>
             <AnimatedItem direction="right" className="relative aspect-[4/3] w-full overflow-hidden rounded-xl border border-border/60 shadow-2xl">
               {heroImage && 
-                <Image src={heroImage.imageUrl} alt={heroImage.description} fill sizes="(min-width: 1024px) 45vw, (min-width: 768px) 50vw, 90vw" className="object-cover transition-transform duration-700 hover:scale-105" data-ai-hint={heroImage.imageHint}/>
+                <Image src={heroImage.imageUrl} alt={heroImage.description} fill loading="eager" sizes="(min-width: 1024px) 45vw, (min-width: 768px) 50vw, 90vw" className="object-cover transition-transform duration-700 hover:scale-105" data-ai-hint={heroImage.imageHint}/>
               }
             </AnimatedItem>
           </div>

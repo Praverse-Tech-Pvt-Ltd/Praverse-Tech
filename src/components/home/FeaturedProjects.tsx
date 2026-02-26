@@ -60,6 +60,7 @@ export function FeaturedProjects() {
                             src={image.imageUrl}
                             alt={project.title}
                             fill
+                            loading="eager"
                             sizes="(min-width: 1280px) 30vw, (min-width: 768px) 45vw, 90vw"
                             className="object-cover"
                             data-ai-hint={image.imageHint}

@@ -42,6 +42,7 @@ export default function HumanoidRoboticsPage() {
             src={heroImage.imageUrl} 
             alt={heroImage.description} 
             fill
+            loading="eager"
             sizes="100vw"
             className="object-cover opacity-25"
             data-ai-hint={heroImage.imageHint}
@@ -113,7 +114,7 @@ export default function HumanoidRoboticsPage() {
             <AnimatedItem direction="right">
               {virtualImage && 
                 <div className="relative aspect-video overflow-hidden rounded-2xl border border-border/60 shadow-xl">
-                  <Image src={virtualImage.imageUrl} alt={virtualImage.description} fill sizes="(min-width: 1024px) 40vw, 90vw" className="object-cover transition-transform duration-700 hover:scale-105" data-ai-hint={virtualImage.imageHint}/>
+                  <Image src={virtualImage.imageUrl} alt={virtualImage.description} fill loading="eager" sizes="(min-width: 1024px) 40vw, 90vw" className="object-cover transition-transform duration-700 hover:scale-105" data-ai-hint={virtualImage.imageHint}/>
                   <div className="absolute inset-0 bg-gradient-to-tr from-black/40 via-black/10 to-transparent" />
                 </div>
               }
@@ -128,7 +129,7 @@ export default function HumanoidRoboticsPage() {
             <AnimatedItem direction="left">
               {assistImage && 
                 <div className="relative aspect-video overflow-hidden rounded-2xl border border-border/60 shadow-xl">
-                  <Image src={assistImage.imageUrl} alt={assistImage.description} fill sizes="(min-width: 1024px) 40vw, 90vw" className="object-cover transition-transform duration-700 hover:scale-105" data-ai-hint={assistImage.imageHint}/>
+                  <Image src={assistImage.imageUrl} alt={assistImage.description} fill loading="eager" sizes="(min-width: 1024px) 40vw, 90vw" className="object-cover transition-transform duration-700 hover:scale-105" data-ai-hint={assistImage.imageHint}/>
                   <div className="absolute inset-0 bg-gradient-to-tr from-black/40 via-transparent to-transparent" />
                 </div>
               }

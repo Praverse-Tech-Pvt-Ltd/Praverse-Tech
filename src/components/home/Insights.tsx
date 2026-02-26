@@ -43,6 +43,7 @@ export function Insights({ founderPost, otherPosts }: InsightsProps) {
                                                     src={imageMeta.imageUrl}
                                                     alt={founderPost.metadata.title}
                                                     fill
+                                                    loading="eager"
                                                     sizes="(min-width: 768px) 50vw, 100vw"
                                                     className="object-cover"
                                                 />
@@ -81,6 +82,7 @@ export function Insights({ founderPost, otherPosts }: InsightsProps) {
                                                     src={image.imageUrl}
                                                     alt={post.metadata.title}
                                                     fill
+                                                    loading="eager"
                                                     sizes="(min-width: 1024px) 30vw, (min-width: 768px) 50vw, 100vw"
                                                     className="object-cover"
                                                     data-ai-hint={image.imageHint}
