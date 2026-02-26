@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -47,10 +46,24 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground antialiased;
-    font-feature-settings: 'kern' 1, 'liga' 1;
+    @apply bg-background text-foreground antialiased overflow-x-hidden;
+    font-feature-settings:
+      "kern" 1,
+      "liga" 1;
   }
-  h1,h2,h3,h4,h5,h6 {
+  img,
+  video,
+  canvas,
+  svg {
+    @apply max-w-full;
+    height: auto;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-headline;
     letter-spacing: -0.02em;
     line-height: 1.2;
@@ -71,17 +84,13 @@
     @apply leading-relaxed;
     max-width: 75ch;
   }
-  p,div,span,a,li,button {
+  p,
+  div,
+  span,
+  a,
+  li,
+  button {
     @apply font-body;
-  }
-  h1{
-    @apply text-5xl font-bold tracking-tighter;
-  }
-  h2{
-    @apply text-4xl font-bold tracking-tighter;
-  }
-  h3{
-    @apply text-2xl font-bold tracking-tighter;
   }
 
   section {
@@ -94,7 +103,11 @@
     @apply bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-60;
   }
   .bg-gradient-radial-hero {
-    background-image: radial-gradient(ellipse 50% 50% at 50% 50%, hsl(var(--primary) / 0.15), transparent);
+    background-image: radial-gradient(
+      ellipse 50% 50% at 50% 50%,
+      hsl(var(--primary) / 0.15),
+      transparent
+    );
   }
   .section-padding {
     @apply py-16 md:py-24 lg:py-32;
