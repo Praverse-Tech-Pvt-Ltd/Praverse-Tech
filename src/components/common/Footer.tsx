@@ -1,4 +1,3 @@
-
 "use client";
 
 import Link from 'next/link';
@@ -14,11 +13,11 @@ export function Footer() {
   const [isWaitlistOpen, setIsWaitlistOpen] = useState(false);
 
   const footerLinks = [
-    { href: '/about', label: 'About' },
-    { href: '/#domains', label: 'Domains' },
+    { href: "/about", label: "About" },
+    { href: "/#domains", label: "Domains" },
     // { href: '/press', label: 'Press' },
-    { href: '/contact', label: 'Contact' },
-  ]
+    { href: "/contact", label: "Contact" },
+  ];
 
   return (
     <footer className="border-t border-border/60 bg-transparent">
@@ -40,13 +39,31 @@ export function Footer() {
               <address className="text-sm text-muted-foreground not-italic">Bangalore, India · Global Operations</address>
               <div className="flex items-center gap-3">
                 <div className="flex space-x-3">
-                  <Link href={SOCIAL_LINKS.twitter} target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-foreground transition-colors focus-ring rounded-sm" aria-label="Twitter">
+                  <Link
+                    href={SOCIAL_LINKS.twitter}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-muted-foreground hover:text-foreground transition-colors focus-ring rounded-sm"
+                    aria-label="Twitter"
+                  >
                     <Twitter className="h-5 w-5" />
                   </Link>
-                  <Link href={SOCIAL_LINKS.linkedin} target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-foreground transition-colors focus-ring rounded-sm" aria-label="LinkedIn">
+                  <Link
+                    href={SOCIAL_LINKS.linkedin}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-muted-foreground hover:text-foreground transition-colors focus-ring rounded-sm"
+                    aria-label="LinkedIn"
+                  >
                     <Linkedin className="h-5 w-5" />
                   </Link>
-                  <Link href={SOCIAL_LINKS.github} target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-foreground transition-colors focus-ring rounded-sm" aria-label="GitHub">
+                  <Link
+                    href={SOCIAL_LINKS.github}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-muted-foreground hover:text-foreground transition-colors focus-ring rounded-sm"
+                    aria-label="GitHub"
+                  >
                     <Github className="h-5 w-5" />
                   </Link>
                 </div>
@@ -56,13 +73,18 @@ export function Footer() {
               </div>
             </div>
 
-            <div className="md:w-1/3 grid grid-cols-2 gap-8">
+            <div className="md:w-1/3 grid grid-cols-1 sm:grid-cols-2 gap-8">
               <div>
-                <h4 className="font-semibold mb-4 text-foreground">Quick Links</h4>
+                <h4 className="font-semibold mb-4 text-foreground">
+                  Quick Links
+                </h4>
                 <ul className="space-y-3">
-                  {footerLinks.map(link => (
+                  {footerLinks.map((link) => (
                     <li key={link.href}>
-                      <Link href={link.href} className="text-sm text-muted-foreground hover:text-foreground transition-colors focus-ring rounded-sm">
+                      <Link
+                        href={link.href}
+                        className="text-sm text-muted-foreground hover:text-foreground transition-colors focus-ring rounded-sm"
+                      >
                         {link.label}
                       </Link>
                     </li>
@@ -72,17 +94,49 @@ export function Footer() {
               <div>
                 <h4 className="font-semibold mb-4 text-foreground">Legal</h4>
                 <ul className="space-y-3">
-                  <li><Link href="/terms" className="text-sm text-muted-foreground hover:text-foreground transition-colors focus-ring rounded-sm">Terms of Service</Link></li>
-                  <li><Link href="/privacy" className="text-sm text-muted-foreground hover:text-foreground transition-colors focus-ring rounded-sm">Privacy Policy</Link></li>
-                  <li><Link href="/healthmate-terms" className="text-sm text-muted-foreground hover:text-foreground transition-colors focus-ring rounded-sm">HealthMate Terms</Link></li>
-                  <li><Link href="/healthmate-privacy" className="text-sm text-muted-foreground hover:text-foreground transition-colors focus-ring rounded-sm">HealthMate Privacy</Link></li>
+                  <li>
+                    <Link
+                      href="/terms"
+                      className="text-sm text-muted-foreground hover:text-foreground transition-colors focus-ring rounded-sm"
+                    >
+                      Terms of Service
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/privacy"
+                      className="text-sm text-muted-foreground hover:text-foreground transition-colors focus-ring rounded-sm"
+                    >
+                      Privacy Policy
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/healthmate-terms"
+                      className="text-sm text-muted-foreground hover:text-foreground transition-colors focus-ring rounded-sm"
+                    >
+                      HealthMate Terms
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/healthmate-privacy"
+                      className="text-sm text-muted-foreground hover:text-foreground transition-colors focus-ring rounded-sm"
+                    >
+                      HealthMate Privacy
+                    </Link>
+                  </li>
                 </ul>
               </div>
             </div>
 
             <div className="md:w-1/3">
-              <h4 className="font-semibold text-foreground">Subscribe to our newsletter</h4>
-              <p className="text-sm text-muted-foreground leading-relaxed mb-4">Get the latest on our research, products, and insights.</p>
+              <h4 className="font-semibold text-foreground">
+                Subscribe to our newsletter
+              </h4>
+              <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                Get the latest on our research, products, and insights.
+              </p>
               <div className="rounded-lg border border-border/50 p-4 bg-background/5">
                 <NewsletterForm />
               </div>
@@ -91,8 +145,14 @@ export function Footer() {
 
           <div className="mt-8 border-t border-border/40 pt-6 flex flex-col md:flex-row items-center justify-between gap-3 text-sm text-muted-foreground">
             <div>
-              <p>© {new Date().getFullYear()} Praverse Tech Pvt Ltd. All rights reserved.</p>
-              <p className="text-xs">HealthMate is proprietary and patent-pending. Details available under NDA.</p>
+              <p>
+                © {new Date().getFullYear()} Praverse Tech Pvt Ltd. All rights
+                reserved.
+              </p>
+              <p className="text-xs">
+                HealthMate is proprietary and patent-pending. Details available
+                under NDA.
+              </p>
             </div>
           </div>
         </div>
