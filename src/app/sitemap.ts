@@ -22,6 +22,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const staticPages = [
     '/',
+    '/enterprise',
+    '/industries/finance-management',
     '/pharma-ai',
     '/humanoid-robotics',
     '/healthmate',

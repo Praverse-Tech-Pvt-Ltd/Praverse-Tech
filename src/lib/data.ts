@@ -1,5 +1,5 @@
 
-import { BrainCircuit, Cpu, FlaskConical, Microscope, Orbit, Stethoscope, Atom, ShieldCheck, Sigma } from "lucide-react";
+import { BrainCircuit, Cpu, FlaskConical, Microscope, Orbit, Stethoscope, Atom, ShieldCheck, Landmark } from "lucide-react";
 
 export const DOMAINS = [
     {
@@ -36,6 +36,13 @@ export const DOMAINS = [
         href: null,
         icon: Cpu,
         color: 'text-orange-400',
+    },
+    {
+        title: 'Finance Management',
+        description: 'Secure, audit-ready finance automation for reporting, spend control, and decision support with trustworthy AI.',
+        href: '/industries/finance-management',
+        icon: Landmark,
+        color: 'text-emerald-400',
     },
     {
         title: 'Biochip 2027',
