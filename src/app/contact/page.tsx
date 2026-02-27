@@ -58,6 +58,10 @@ export default function ContactPage() {
                 <p className="text-muted-foreground mt-3 text-sm leading-relaxed">
                   Find us at our office or reach out directly.
                 </p>
+                <p className="text-muted-foreground mt-2 text-sm leading-relaxed">
+                  Our teams operate from Bangalore, Hyderabad, Pune, Mumbai,
+                  and Chennai.
+                </p>
               </div>
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
